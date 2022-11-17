@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        :root{
+            --primary-color: #4190f2;
+            --secondary-color: #333;
+            --body-color: #fbfbfb;
+            --primary-light-color: #49bd54;}
+        body{color: var(--secondary-color); margin: 0;}
+        body, ul, h1, h2, h4, p{margin: 0; font-family: 'Poppins', sans-serif;}
+        ul{padding: 0; list-style: none;}
+        li{ display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 10px;}
+        .box_list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 30px;
+        }
+        .box_list h4 {
+            font-weight: 600;
+        }
+        .all_data{
+            padding: 0 20px; 
+            max-width: 500px; 
+            margin: 0 auto;
+        }
+        @media screen and (max-width: 500px) {
+            .all_data {
+                max-width: 90%;
+            }
+            .box_list {
+                padding: 30px 0;
+            }
+            p{
+                font-size: 15px;
+            }
+            h2 {
+                font-size: 17px;
+            }
+        }
+        </style>
+        <header style="background-color: var(--primary-color); color: var(--body-color); text-align: center; padding: 30px 0;">
+            <h1>Pay Pal</h1>
+            <p>Invoice #%InvoiceNumber%</p>
+        </header>
+        <div class="all_data">
+           
+           <div>
+                <div style=" padding: 20px; margin-bottom: 5px;">
+                    <p style="margin-bottom: 10px; font-weight: 500; color: #2283f9;">Dear %CustomerName%,</p>
+                    <p>
+                        Thank you for your business. Your invoice can be viewed, 
+                        printed and downloaded as PDF from the link below. Thankyou.
+                    </p>
+                </div>
+                <div style="padding: 20px; box-shadow: 3px 3px 10px #949494; background-color: #fefefedd; border-radius: 5px;">
+                   <h2 style="text-align: center; color: var(--primary-color);">INVOICE AMOUNT %Total%</h2>
+                   <hr>
+                   <ul class="box_list">
+                       <li><span>Invoice No</span> <h4>%InvoiceNumber%</h4></li>
+                       <li><span>Invoice Date</span> <h4>%InvoiceDate%</h4></li>
+                       <li><span>Payment Date</span> <h4>%DueDate%</h4></li>
+                   </ul>
+                   <div style=" text-align: center;">
+                       <h2 style=" display: inline-block; ; color: #fff; background-color:var(--primary-color)  ;border-radius: 5px; padding: 10px 20px;">HELPLINE +19794133103</h2>
+                   </div>
+               </div>
+               <h4 style="margin: 30px 0 5px; color: #4190f2; font-weight: 600;">Regards,</h4>
+               <p style="padding-bottom: 20px;">%CompanyName%</p>
+           </div>
+        </div>
+</body>
+</html>
